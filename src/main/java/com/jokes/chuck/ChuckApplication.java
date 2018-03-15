@@ -1,12 +1,18 @@
 package com.jokes.chuck;
 
+import com.jokes.chuck.controllers.JokesController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 
 @SpringBootApplication
 public class ChuckApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ChuckApplication.class, args);
+		ApplicationContext ac = SpringApplication.run(ChuckApplication.class, args);
+
+		JokesController controller = (JokesController) ac.getBean("jokesController");
+		System.out.println(controller.giveJokes());
 	}
+
 }
