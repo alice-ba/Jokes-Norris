@@ -11,8 +11,6 @@ public class ChuckApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext ac = SpringApplication.run(ChuckApplication.class, args);
-		JokesController controller = (JokesController) ac.getBean("jokesController");
-
-	}
+			}
 
 }
